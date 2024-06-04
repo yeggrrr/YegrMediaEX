@@ -32,7 +32,6 @@ class SignUpViewController: UIViewController {
     
     func configurHierarchy() {
         view.addSubview(logoLabel)
-        
         view.addSubview(emailPhoneNumberTextField)
         view.addSubview(passwordTextField)
         view.addSubview(nicknameTextField)
@@ -122,49 +121,5 @@ class SignUpViewController: UIViewController {
         let vc = MediaViewController()
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
-    }
-}
-
-extension UITextField {
-    func setCustomUI(_ placeholderText: String, isSecureText: Bool, _ keyboardStyle: UIKeyboardType) {
-        attributedPlaceholder = NSAttributedString(
-            string: placeholderText,
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor.white]
-        )
-        backgroundColor = .darkGray
-        textColor = .white
-        keyboardType = keyboardStyle
-        isSecureTextEntry = isSecureText
-        returnKeyType = .done
-        keyboardAppearance = .dark
-        layer.cornerRadius = 5
-        leftPadding()
-    }
-    
-    func leftPadding() {
-        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: self.frame.height))
-        self.leftView = paddingView
-        self.leftViewMode = ViewMode.always
-    }
-}
-
-extension UIButton {
-    func signUpStyle() {
-        setTitle("회원가입", for: .normal)
-        setTitle("회원가입", for: .highlighted)
-        setTitleColor(.black, for: .normal)
-        setTitleColor(.darkGray, for: .highlighted)
-        configuration?.titleAlignment = .center
-        backgroundColor = .white
-        layer.cornerRadius = 8
-    }
-}
-
-extension UILabel {
-    func setCustomUI(_ title: String, textColorStyle: UIColor, _ alignment: NSTextAlignment) {
-        text = title
-        textColor = textColorStyle
-        textAlignment = alignment
-        font = .boldSystemFont(ofSize: 17)
     }
 }

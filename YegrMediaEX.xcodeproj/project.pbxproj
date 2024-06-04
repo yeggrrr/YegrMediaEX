@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		685164802C0EF87400268CC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6851647F2C0EF87400268CC1 /* AppDelegate.swift */; };
 		685164822C0EF87400268CC1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685164812C0EF87400268CC1 /* SceneDelegate.swift */; };
-		685164842C0EF87400268CC1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685164832C0EF87400268CC1 /* ViewController.swift */; };
 		685164872C0EF87400268CC1 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 685164862C0EF87400268CC1 /* Base */; };
 		685164892C0EF87500268CC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 685164882C0EF87500268CC1 /* Assets.xcassets */; };
 		6851648C2C0EF87500268CC1 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 6851648B2C0EF87500268CC1 /* Base */; };
@@ -17,13 +16,16 @@
 		6851649D2C0EFC3800268CC1 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 6851649C2C0EFC3800268CC1 /* SnapKit */; };
 		685164A02C0F0A2E00268CC1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6851649F2C0F0A2E00268CC1 /* HomeViewController.swift */; };
 		685164A32C0F104100268CC1 /* MediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685164A22C0F104100268CC1 /* MediaViewController.swift */; };
+		685164A62C0F59C800268CC1 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685164A52C0F59C800268CC1 /* UILabel+.swift */; };
+		685164A82C0F59CD00268CC1 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685164A72C0F59CD00268CC1 /* UIButton+.swift */; };
+		685164AA2C0F59FF00268CC1 /* UIImageView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685164A92C0F59FF00268CC1 /* UIImageView+.swift */; };
+		685164AC2C0F5A1A00268CC1 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685164AB2C0F5A1A00268CC1 /* UITextField+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6851647C2C0EF87400268CC1 /* YegrMediaEX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YegrMediaEX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6851647F2C0EF87400268CC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		685164812C0EF87400268CC1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		685164832C0EF87400268CC1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		685164862C0EF87400268CC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		685164882C0EF87500268CC1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6851648B2C0EF87500268CC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -31,6 +33,10 @@
 		685164932C0EF8C200268CC1 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		6851649F2C0F0A2E00268CC1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		685164A22C0F104100268CC1 /* MediaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaViewController.swift; sourceTree = "<group>"; };
+		685164A52C0F59C800268CC1 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
+		685164A72C0F59CD00268CC1 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
+		685164A92C0F59FF00268CC1 /* UIImageView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+.swift"; sourceTree = "<group>"; };
+		685164AB2C0F5A1A00268CC1 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,9 +70,9 @@
 		6851647E2C0EF87400268CC1 /* YegrMediaEX */ = {
 			isa = PBXGroup;
 			children = (
+				685164A42C0F59BC00268CC1 /* Extensions */,
 				6851647F2C0EF87400268CC1 /* AppDelegate.swift */,
 				685164812C0EF87400268CC1 /* SceneDelegate.swift */,
-				685164832C0EF87400268CC1 /* ViewController.swift */,
 				685164852C0EF87400268CC1 /* Main.storyboard */,
 				685164882C0EF87500268CC1 /* Assets.xcassets */,
 				6851648A2C0EF87500268CC1 /* LaunchScreen.storyboard */,
@@ -100,6 +106,17 @@
 				685164A22C0F104100268CC1 /* MediaViewController.swift */,
 			);
 			path = TabBar;
+			sourceTree = "<group>";
+		};
+		685164A42C0F59BC00268CC1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				685164A52C0F59C800268CC1 /* UILabel+.swift */,
+				685164A72C0F59CD00268CC1 /* UIButton+.swift */,
+				685164A92C0F59FF00268CC1 /* UIImageView+.swift */,
+				685164AB2C0F5A1A00268CC1 /* UITextField+.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,12 +196,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				685164AA2C0F59FF00268CC1 /* UIImageView+.swift in Sources */,
+				685164AC2C0F5A1A00268CC1 /* UITextField+.swift in Sources */,
 				685164A02C0F0A2E00268CC1 /* HomeViewController.swift in Sources */,
 				685164A32C0F104100268CC1 /* MediaViewController.swift in Sources */,
-				685164842C0EF87400268CC1 /* ViewController.swift in Sources */,
 				685164802C0EF87400268CC1 /* AppDelegate.swift in Sources */,
+				685164A62C0F59C800268CC1 /* UILabel+.swift in Sources */,
 				685164942C0EF8C200268CC1 /* SignUpViewController.swift in Sources */,
 				685164822C0EF87400268CC1 /* SceneDelegate.swift in Sources */,
+				685164A82C0F59CD00268CC1 /* UIButton+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

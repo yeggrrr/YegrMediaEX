@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class HomeViewController: UITabBarController {
+class HomeViewController: UIViewController {
     let mainPosterImageView = UIImageView()
     let genreLabel = UILabel()
     let playButton = UIButton(type: .system)
@@ -54,13 +54,15 @@ class HomeViewController: UITabBarController {
         leftImageView.addSubview(leftNBadgeImageView)
         centerImageView.addSubview(centerNBadgeImageView)
         rightImageView.addSubview(rightNBadgeImageView)
-        
     }
     
     func configureLayout() {
+        let safeArea = view.safeAreaLayoutGuide
+        let buttonRatio: Double = 0.9 / 2
+        
         mainPosterImageView.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide)
-            $0.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(10)
+            $0.top.equalTo(safeArea)
+            $0.leading.trailing.equalTo(safeArea).inset(10)
             $0.height.equalTo(450)
         }
         
@@ -68,14 +70,14 @@ class HomeViewController: UITabBarController {
             $0.leading.equalTo(mainPosterImageView.snp.leading).offset(10)
             $0.bottom.equalTo(mainPosterImageView.snp.bottom).offset(-10)
             $0.height.equalTo(40)
-            $0.width.equalTo(mainPosterImageView.snp.width).multipliedBy(0.9/2.0)
+            $0.width.equalTo(mainPosterImageView.snp.width).multipliedBy(buttonRatio)
         }
         
         addWishListButton.snp.makeConstraints {
             $0.trailing.equalTo(mainPosterImageView.snp.trailing).offset(-10)
             $0.bottom.equalTo(mainPosterImageView.snp.bottom).offset(-10)
             $0.height.equalTo(40)
-            $0.width.equalTo(mainPosterImageView.snp.width).multipliedBy(0.9/2.0)
+            $0.width.equalTo(mainPosterImageView.snp.width).multipliedBy(buttonRatio)
         }
         
         genreLabel.snp.makeConstraints {
@@ -85,70 +87,62 @@ class HomeViewController: UITabBarController {
         }
         
         hotContentsLabel.snp.makeConstraints {
-            $0.leading.equalTo(view.safeAreaLayoutGuide).offset(15)
+            $0.leading.equalTo(safeArea).offset(15)
             $0.top.equalTo(mainPosterImageView.snp.bottom).offset(10)
         }
         
         bottomImageStackView.snp.makeConstraints {
             $0.top.equalTo(hotContentsLabel.snp.bottom).offset(10)
-            $0.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(10)
-            $0.bottom.equalTo(view.safeAreaLayoutGuide).offset(-10)
+            $0.leading.trailing.equalTo(safeArea).inset(10)
+            $0.bottom.equalTo(safeArea).offset(-10)
         }
         
         leftTop10ImageView.snp.makeConstraints {
             $0.top.equalTo(leftImageView.snp.top)
             $0.trailing.equalTo(leftImageView.snp.trailing)
-            $0.width.equalTo(leftImageView.snp.width).multipliedBy(0.9/3.0)
-            $0.height.equalTo(leftImageView.snp.height).multipliedBy(0.9/3.0)
+            $0.width.equalTo(30)
+            $0.height.equalTo(leftTop10ImageView.snp.width).multipliedBy(1.5)
         }
         
         centerTop10ImageView.snp.makeConstraints {
             $0.top.equalTo(centerImageView.snp.top)
             $0.trailing.equalTo(centerImageView.snp.trailing)
-            $0.width.equalTo(centerImageView.snp.width).multipliedBy(0.9/3.0)
-            $0.height.equalTo(centerImageView.snp.height).multipliedBy(0.9/3.0)
+            $0.width.equalTo(30)
+            $0.height.equalTo(leftTop10ImageView.snp.width).multipliedBy(1.5)
         }
         
         rightTop10ImageView.snp.makeConstraints {
             $0.top.equalTo(rightImageView.snp.top)
             $0.trailing.equalTo(rightImageView.snp.trailing)
-            $0.width.equalTo(rightImageView.snp.width).multipliedBy(0.9/3.0)
-            $0.height.equalTo(rightImageView.snp.height).multipliedBy(0.9/3.0)
+            $0.width.equalTo(30)
+            $0.height.equalTo(leftTop10ImageView.snp.width).multipliedBy(1.5)
         }
         
         leftNBadgeImageView.snp.makeConstraints {
-            $0.top.equalTo(leftImageView.snp.top)
-            $0.leading.equalTo(leftImageView.snp.leading)
-            $0.width.equalTo(leftImageView.snp.width).multipliedBy(0.9/3.0)
-            $0.height.equalTo(leftImageView.snp.height).multipliedBy(0.9/3.0)
+            $0.top.equalTo(leftImageView.snp.top).offset(5)
+            $0.leading.equalTo(leftImageView.snp.leading).offset(5)
         }
         
         centerNBadgeImageView.snp.makeConstraints {
-            $0.top.equalTo(centerImageView.snp.top)
-            $0.leading.equalTo(centerImageView.snp.leading)
-            $0.width.equalTo(centerImageView.snp.width).multipliedBy(0.9/3.0)
-            $0.height.equalTo(centerImageView.snp.height).multipliedBy(0.9/3.0)
+            $0.top.equalTo(centerImageView.snp.top).offset(5)
+            $0.leading.equalTo(centerImageView.snp.leading).offset(5)
         }
         
         rightNBadgeImageView.snp.makeConstraints {
-            $0.top.equalTo(rightImageView.snp.top)
-            $0.leading.equalTo(rightImageView.snp.leading)
-            $0.width.equalTo(rightImageView.snp.width).multipliedBy(0.9/3.0)
-            $0.height.equalTo(rightImageView.snp.height).multipliedBy(0.9/3.0)
+            $0.top.equalTo(rightImageView.snp.top).offset(5)
+            $0.leading.equalTo(rightImageView.snp.leading).offset(5)
         }
-        
-        
     }
     
     func configureUI() {
-        // navigationUI
+        // container view
         view.backgroundColor = .black
-        navigationItem.title = "YEGR님"
-        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(.white)]
         
+        // navigationbar
         let left = UIBarButtonItem(title: "로그아웃", style: .plain, target: self, action: #selector(logoutBarButtonClicked))
-        navigationItem.leftBarButtonItem = left
-        navigationItem.leftBarButtonItem?.tintColor = .white
+        navigationController?.navigationBar.topItem?.leftBarButtonItem = left
+        navigationController?.navigationBar.topItem?.leftBarButtonItem?.tintColor = .white
+        navigationController?.navigationBar.topItem?.title = "YEGR님"
         
         // mainPosterImageView
         mainPosterImageView.backgroundColor = .systemGray
@@ -172,58 +166,24 @@ class HomeViewController: UITabBarController {
         bottomImageStackView.spacing = 5
         
         // left, center, rightImageView
-        leftImageView.backgroundColor = .systemGray
-        leftImageView.layer.cornerRadius = 10
-        centerImageView.backgroundColor = .systemGray
-        centerImageView.layer.cornerRadius = 10
-        rightImageView.backgroundColor = .systemGray
-        rightImageView.layer.cornerRadius = 10
+        [leftImageView, centerImageView, rightImageView].forEach {
+            $0.backgroundColor = .systemGray
+            $0.layer.cornerRadius = 10
+            $0.clipsToBounds = true
+        }
         
         // left, center, rightTop10ImageView
-        leftTop10ImageView.image = UIImage(named: "top10 badge")
-        centerTop10ImageView.image = UIImage(named: "top10 badge")
-        rightTop10ImageView.image = UIImage(named: "top10 badge")
+        [leftTop10ImageView, centerTop10ImageView, rightTop10ImageView].forEach {
+            $0.image = UIImage(named: "top10 badge")
+        }
         
         // left, center, rightNBadgeImageView
-        leftNBadgeImageView.backgroundColor = .white
-        centerNBadgeImageView.backgroundColor = .white
-        rightNBadgeImageView.backgroundColor = .white
+        [leftNBadgeImageView, centerNBadgeImageView, rightNBadgeImageView].forEach {
+            $0.image = UIImage(named: "single-large")
+        }
     }
     
     @objc func logoutBarButtonClicked() {
         dismiss(animated: true)
-    }
-}
-
-extension UIImageView {
-    func setUI(_ imageName: String , cornerRadius: CGFloat) {
-        image = UIImage(named: imageName)
-        layer.cornerRadius = cornerRadius
-        contentMode = .scaleAspectFill
-    }
-    
-    func setBadgeUI(_ badgeName: String, hidden: Bool) {
-        image = UIImage(named: badgeName)
-        contentMode = .scaleToFill
-        isHidden = hidden
-    }
-}
-
-extension UIButton {
-    func setUI(_ backgroundColorStyle: UIColor, _ tintColorStyle: UIColor, _ imageName: String, _ title: String) {
-        backgroundColor = backgroundColorStyle
-        setImage(UIImage(systemName: imageName), for: .normal)
-        setTitle(title, for: .normal)
-        tintColor = tintColorStyle
-        layer.cornerRadius = 5
-    }
-}
-
-extension UILabel {
-    func setUI(_ title: String, _ alignment: NSTextAlignment) {
-        text = title
-        font = .boldSystemFont(ofSize: 17)
-        textColor = .white
-        textAlignment = alignment
     }
 }
