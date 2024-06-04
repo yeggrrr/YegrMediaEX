@@ -19,13 +19,17 @@ class HomeViewController: UITabBarController {
     let leftImageView = UIImageView()
     let centerImageView = UIImageView()
     let rightImageView = UIImageView()
+    
+    let leftTop10ImageView = UIImageView()
+    let centerTop10ImageView = UIImageView()
+    let rightTop10ImageView = UIImageView()
+    
+    let leftNBadgeImageView = UIImageView()
+    let centerNBadgeImageView = UIImageView()
+    let rightNBadgeImageView = UIImageView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        view.backgroundColor = .black
-        navigationItem.title = "YEGR님"
-        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         
         configurHierarchy()
         configureLayout()
@@ -42,6 +46,15 @@ class HomeViewController: UITabBarController {
         bottomImageStackView.addArrangedSubview(leftImageView)
         bottomImageStackView.addArrangedSubview(centerImageView)
         bottomImageStackView.addArrangedSubview(rightImageView)
+        
+        leftImageView.addSubview(leftTop10ImageView)
+        centerImageView.addSubview(centerTop10ImageView)
+        rightImageView.addSubview(rightTop10ImageView)
+        
+        leftImageView.addSubview(leftNBadgeImageView)
+        centerImageView.addSubview(centerNBadgeImageView)
+        rightImageView.addSubview(rightNBadgeImageView)
+        
     }
     
     func configureLayout() {
@@ -81,10 +94,58 @@ class HomeViewController: UITabBarController {
             $0.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(10)
             $0.bottom.equalTo(view.safeAreaLayoutGuide).offset(-10)
         }
+        
+        leftTop10ImageView.snp.makeConstraints {
+            $0.top.equalTo(leftImageView.snp.top)
+            $0.trailing.equalTo(leftImageView.snp.trailing)
+            $0.width.equalTo(leftImageView.snp.width).multipliedBy(0.9/3.0)
+            $0.height.equalTo(leftImageView.snp.height).multipliedBy(0.9/3.0)
+        }
+        
+        centerTop10ImageView.snp.makeConstraints {
+            $0.top.equalTo(centerImageView.snp.top)
+            $0.trailing.equalTo(centerImageView.snp.trailing)
+            $0.width.equalTo(centerImageView.snp.width).multipliedBy(0.9/3.0)
+            $0.height.equalTo(centerImageView.snp.height).multipliedBy(0.9/3.0)
+        }
+        
+        rightTop10ImageView.snp.makeConstraints {
+            $0.top.equalTo(rightImageView.snp.top)
+            $0.trailing.equalTo(rightImageView.snp.trailing)
+            $0.width.equalTo(rightImageView.snp.width).multipliedBy(0.9/3.0)
+            $0.height.equalTo(rightImageView.snp.height).multipliedBy(0.9/3.0)
+        }
+        
+        leftNBadgeImageView.snp.makeConstraints {
+            $0.top.equalTo(leftImageView.snp.top)
+            $0.leading.equalTo(leftImageView.snp.leading)
+            $0.width.equalTo(leftImageView.snp.width).multipliedBy(0.9/3.0)
+            $0.height.equalTo(leftImageView.snp.height).multipliedBy(0.9/3.0)
+        }
+        
+        centerNBadgeImageView.snp.makeConstraints {
+            $0.top.equalTo(centerImageView.snp.top)
+            $0.leading.equalTo(centerImageView.snp.leading)
+            $0.width.equalTo(centerImageView.snp.width).multipliedBy(0.9/3.0)
+            $0.height.equalTo(centerImageView.snp.height).multipliedBy(0.9/3.0)
+        }
+        
+        rightNBadgeImageView.snp.makeConstraints {
+            $0.top.equalTo(rightImageView.snp.top)
+            $0.leading.equalTo(rightImageView.snp.leading)
+            $0.width.equalTo(rightImageView.snp.width).multipliedBy(0.9/3.0)
+            $0.height.equalTo(rightImageView.snp.height).multipliedBy(0.9/3.0)
+        }
+        
+        
     }
     
     func configureUI() {
-        // navigation
+        // navigationUI
+        view.backgroundColor = .black
+        navigationItem.title = "YEGR님"
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(.white)]
+        
         let left = UIBarButtonItem(title: "로그아웃", style: .plain, target: self, action: #selector(logoutBarButtonClicked))
         navigationItem.leftBarButtonItem = left
         navigationItem.leftBarButtonItem?.tintColor = .white
@@ -117,6 +178,16 @@ class HomeViewController: UITabBarController {
         centerImageView.layer.cornerRadius = 10
         rightImageView.backgroundColor = .systemGray
         rightImageView.layer.cornerRadius = 10
+        
+        // left, center, rightTop10ImageView
+        leftTop10ImageView.image = UIImage(named: "top10 badge")
+        centerTop10ImageView.image = UIImage(named: "top10 badge")
+        rightTop10ImageView.image = UIImage(named: "top10 badge")
+        
+        // left, center, rightNBadgeImageView
+        leftNBadgeImageView.backgroundColor = .white
+        centerNBadgeImageView.backgroundColor = .white
+        rightNBadgeImageView.backgroundColor = .white
     }
     
     @objc func logoutBarButtonClicked() {
