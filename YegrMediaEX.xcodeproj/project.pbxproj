@@ -70,7 +70,6 @@
 		6851647E2C0EF87400268CC1 /* YegrMediaEX */ = {
 			isa = PBXGroup;
 			children = (
-				685164A42C0F59BC00268CC1 /* Extensions */,
 				6851647F2C0EF87400268CC1 /* AppDelegate.swift */,
 				685164812C0EF87400268CC1 /* SceneDelegate.swift */,
 				685164852C0EF87400268CC1 /* Main.storyboard */,
@@ -79,6 +78,7 @@
 				685164A12C0F102100268CC1 /* TabBar */,
 				685164952C0EF8DD00268CC1 /* SignUP */,
 				6851649E2C0F09EC00268CC1 /* Home */,
+				685164A42C0F59BC00268CC1 /* Extensions */,
 				6851648D2C0EF87500268CC1 /* Info.plist */,
 			);
 			path = YegrMediaEX;

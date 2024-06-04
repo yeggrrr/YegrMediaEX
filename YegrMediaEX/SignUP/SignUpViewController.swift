@@ -27,7 +27,11 @@ class SignUpViewController: UIViewController {
         configurHierarchy()
         configureLayout()
         configureUI()
+        
         signUpButton.addTarget(self, action: #selector(signUpButtonClicked), for: .touchUpInside)
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
     }
     
     func configurHierarchy() {
@@ -121,5 +125,9 @@ class SignUpViewController: UIViewController {
         let vc = MediaViewController()
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }
