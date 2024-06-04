@@ -16,6 +16,7 @@
 		685164942C0EF8C200268CC1 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685164932C0EF8C200268CC1 /* SignUpViewController.swift */; };
 		6851649D2C0EFC3800268CC1 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 6851649C2C0EFC3800268CC1 /* SnapKit */; };
 		685164A02C0F0A2E00268CC1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6851649F2C0F0A2E00268CC1 /* HomeViewController.swift */; };
+		685164A32C0F104100268CC1 /* MediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685164A22C0F104100268CC1 /* MediaViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		6851648D2C0EF87500268CC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		685164932C0EF8C200268CC1 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		6851649F2C0F0A2E00268CC1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		685164A22C0F104100268CC1 /* MediaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				685164852C0EF87400268CC1 /* Main.storyboard */,
 				685164882C0EF87500268CC1 /* Assets.xcassets */,
 				6851648A2C0EF87500268CC1 /* LaunchScreen.storyboard */,
+				685164A12C0F102100268CC1 /* TabBar */,
 				685164952C0EF8DD00268CC1 /* SignUP */,
 				6851649E2C0F09EC00268CC1 /* Home */,
 				6851648D2C0EF87500268CC1 /* Info.plist */,
@@ -89,6 +92,14 @@
 				6851649F2C0F0A2E00268CC1 /* HomeViewController.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		685164A12C0F102100268CC1 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				685164A22C0F104100268CC1 /* MediaViewController.swift */,
+			);
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,6 +180,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				685164A02C0F0A2E00268CC1 /* HomeViewController.swift in Sources */,
+				685164A32C0F104100268CC1 /* MediaViewController.swift in Sources */,
 				685164842C0EF87400268CC1 /* ViewController.swift in Sources */,
 				685164802C0EF87400268CC1 /* AppDelegate.swift in Sources */,
 				685164942C0EF8C200268CC1 /* SignUpViewController.swift in Sources */,

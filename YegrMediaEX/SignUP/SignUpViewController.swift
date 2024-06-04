@@ -119,7 +119,9 @@ class SignUpViewController: UIViewController {
     }
     
     @objc func signUpButtonClicked() {
-        
+        let vc = MediaViewController()
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
     }
 }
 
